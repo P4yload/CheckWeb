@@ -1,5 +1,5 @@
 clear
-Write-Host ("SkyBars Checker") -ForegroundColor Cyan
+Write-Host ("FunSky Checker") -ForegroundColor Cyan
 
 $folderPath1 = "C:\Windows\Temp"
 $folderPath2 = "C:\"
